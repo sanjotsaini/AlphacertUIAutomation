@@ -33,6 +33,7 @@ namespace AlphacertTest.ScreenShots
             var actualPath = assemblyPath.Substring(0, assemblyPath.LastIndexOf("bin"));
             var projectPath = new Uri(actualPath).LocalPath;
             return projectPath + @"Reports/" + apiType;
+
         }
     }
 }
