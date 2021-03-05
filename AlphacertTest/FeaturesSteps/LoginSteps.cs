@@ -26,27 +26,20 @@ namespace AlphacertTest.FeaturesSteps
         private readonly AutomobilePage automobilePage;
         private readonly IsuranceData isuranceData;
         private readonly Validator validator;
-        private readonly SnapShot snapShot;
-        private readonly ScenarioContext senario;
-        
-
-
+        private readonly SnapShot snapShot;        
+       
         public LoginSteps(ScenarioContext scenarioContext)
         {
             this.homePage = new HomePage();
             this.automobilePage = new AutomobilePage();
             this.isuranceData = new IsuranceData();
             this.validator = new Validator();
-            this.snapShot = new SnapShot();
-            
+            this.snapShot = new SnapShot();            
         }        
 
         [Given(@"I visit to Tricentie website")]
         public void GivenIVisitToTricentieWebsite()
-        {
-            string date = DateTime.Now.AddDays(32).ToString("dd/MM/yyyy");
-            //DateTime.UtcNow.ToString("yyyy-MM-dd")
-            //string date = expiryDate.ToString();
+        {            
             NavigationHelper.NavigateToWebsite(ObjectRepository.Config.GetWebsite());
         }
 
@@ -55,9 +48,7 @@ namespace AlphacertTest.FeaturesSteps
         {
             homePage.NavigateToAutomobile();
         }
-
       
-
         [Then(@"I verify the quote is sent succesfully")]
         public void ThenIVerifyTheQuoteIsSentSuccesfully()
         {                            
@@ -68,8 +59,7 @@ namespace AlphacertTest.FeaturesSteps
         [Then(@"I fill the vehicle data details")]
         public void ThenIFillTheVehicleDataDetails(Table vehicledata)
         {
-            var dataTableValues = vehicledata.CreateInstance<DataTables>();
-           
+            var dataTableValues = vehicledata.CreateInstance<DataTables>();           
             automobilePage.SetMake(dataTableValues.Make);
             automobilePage.SetDateOfManufacture(dataTableValues.DateOfManufacture);
             automobilePage.SetEnginePerformance(dataTableValues.EnginePerformance);
@@ -88,7 +78,6 @@ namespace AlphacertTest.FeaturesSteps
         public void ThenIFillTheInsuranceDataDetails(Table insuranceData)
         {
             var dataTableValues = insuranceData.CreateInstance<DataTables>();
-
             isuranceData.SetFirstName(dataTableValues.FirstName);
             automobilePage.SetLastName(dataTableValues.LastName);
             automobilePage.SetDOB(dataTableValues.DOB);
@@ -108,8 +97,8 @@ namespace AlphacertTest.FeaturesSteps
         [Then(@"I fill the enter product data details")]
         public void ThenIFillTheEnterProductDataDetails(Table productData)
         {
-            var dataTableValues = productData.CreateInstance<DataTables>();
-            automobilePage.SetStartDate(DateTime.Now.AddDays(32).ToString("dd/MM/yyyy"));
+            var dataTableValues = productData.CreateInstance<DataTables>();            
+            automobilePage.SetStartDate(DateTime.Parse(dataTableValues.StartDate).AddDays(80).ToString("MM/dd/yyyy"));           
             automobilePage.SetInsuranceSum(dataTableValues.InsurancSum);
             automobilePage.SetMeritRating(dataTableValues.MeritRating);
             automobilePage.SetDamageInsurance(dataTableValues.DamageInsurance);
@@ -134,7 +123,6 @@ namespace AlphacertTest.FeaturesSteps
         {
             automobilePage.ClickSendQuoteButton();
         }
-
 
         [Then(@"I fill the send qoute details")]
         public void ThenIFillTheSendQouteDetails(Table sendQuote)

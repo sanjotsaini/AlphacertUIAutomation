@@ -14,10 +14,8 @@ namespace AlphacertTest.Utilities
         public string DateOfManufacture { get; set; }
         public string NumberOfSeats { get; set; }
         public string FuelType { get; set; }
-
         public string ListPrice { get; set; }
         public string LicencePlateNumber { get; set; }
-
         public string AnualMilage { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -36,8 +34,6 @@ namespace AlphacertTest.Utilities
         public string DamageInsurance { get; set; }
         public string OptionalProducts { get; set; }
         public string CourtesyCar { get; set; }
-
-
         public string Email { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
