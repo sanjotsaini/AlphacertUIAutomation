@@ -11,7 +11,11 @@ namespace AlphacertTest.ComponentHelper
    public class DropDownHelper
     {
         private static SelectElement select;
-
+        /// <summary>
+        /// Select the value from drop down with name 
+        /// </summary>
+        /// <param name="element"></param>
+        /// <param name="name"></param>
             public static void SelectElement(IWebElement element,string name)
         {
             select = new SelectElement(element);

@@ -23,7 +23,11 @@ namespace AlphacertTest.ScreenShots
             ss.SaveAsFile(GetPath(imageName+".jpeg"),
             ScreenshotImageFormat.Jpeg);
         }
-     
+     /// <summary>
+     /// Gets the path of the Report folder to Attach screen shot and report
+     /// </summary>
+     /// <param name="name"></param>
+     /// <returns></returns>
         public static  string GetPath(string name = "")
         {
             var jsonFilePath = Path.Combine(GetProjectPath(DateTime.UtcNow.ToString("yyyy-MM-dd")) + @"/",name);

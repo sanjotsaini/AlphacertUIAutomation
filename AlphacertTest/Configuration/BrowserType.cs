@@ -8,7 +8,6 @@ namespace AlphacertTest.Configuration
 {
      public enum BrowserType
     {
-
         Chrome,
         Edge
     }

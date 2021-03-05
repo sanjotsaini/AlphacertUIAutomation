@@ -197,3 +197,4 @@ C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTes
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.csproj.CopyComplete
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.pdb
+C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.csprojAssemblyReference.cache

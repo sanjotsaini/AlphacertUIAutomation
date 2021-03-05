@@ -9,7 +9,10 @@ namespace AlphacertTest.ComponentHelper
 {
     public class ButtonHelper
     {
-
+        /// <summary>
+        /// Clicks the the element found 
+        /// </summary>
+        /// <param name="element"></param>
         public static void ClickButton(IWebElement element)
         {
             element.Click();

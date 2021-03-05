@@ -10,28 +10,17 @@ namespace AlphacertTest.Utilities
 {
     public class Validator
     {
-
+        /// <summary>
+        /// This method validate the string. foe eample to get value from web page and compare it with expected value
+        /// </summary>
+        /// <param name="expected"></param>
+        /// <param name="actual"></param>
         public void ValidateString(string expected,string actual)
         {
             Assert.AreEqual(expected, actual);
             Assert.IsNotEmpty(actual);
             Assert.IsNotNull(actual);
-
-
         }
-
-        public string GetCertificate(string name)
-        {
-            var jsonFilePath = Path.Combine(GetCertificatePath("CRMFacade") + @"/", name);
-            return jsonFilePath;
-        }
-
-        private string GetCertificatePath(string apiType)
-        {
-            var assemblyPath = AppContext.BaseDirectory;
-            var actualPath = assemblyPath.Substring(0, assemblyPath.LastIndexOf("bin"));
-            var projectPath = new Uri(actualPath).LocalPath;
-            return projectPath + @"ScreenShots/" + apiType;
-        }
+     
     }
 }

@@ -9,11 +9,14 @@ namespace AlphacertTest.ComponentHelper
 {
     public class NavigationHelper
     {
+        /// <summary>
+        /// Navigates to URL 
+        /// </summary>
+        /// <param name="Url"></param>
         public static void NavigateToWebsite(string Url)
         {
             WaitHelper.SetPageLoadTime(50000);
-            WaitHelper.ThinkTime(5);
-            //ObjectRepository.Driver.Manage().Timeouts().PageLoad.Add(TimeSpan.FromMilliseconds(1));
+            WaitHelper.ThinkTime(5);            
             ObjectRepository.Driver.Navigate().GoToUrl(Url);
              
         }

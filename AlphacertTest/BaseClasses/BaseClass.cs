@@ -17,8 +17,11 @@ namespace AlphacertTest.BaseClasses
    [TestClass]
      public class BaseClass
     {
-
-        private static ChromeOptions GetChromeOption() {
+        /// <summary>
+        /// sets the chrome browser settings
+        /// </summary>
+        /// <returns></returns>
+        private static ChromeOptions SetChromeOption() {
 
             ChromeOptions options = new ChromeOptions();
             options.AddArgument("start-maximized");
@@ -26,12 +29,20 @@ namespace AlphacertTest.BaseClasses
             return options;
         }
 
+        /// <summary>
+        /// Gets the Chrome driver 
+        /// </summary>
+        /// <returns></returns>
         private static IWebDriver GetChromeDriver() {
 
-            IWebDriver driver = new ChromeDriver(GetChromeOption());
+            IWebDriver driver = new ChromeDriver(SetChromeOption());
             return driver;
         }
 
+        /// <summary>
+        /// Get the Edge driver
+        /// </summary>
+        /// <returns></returns>
         private static IWebDriver GetEdgeDriver()
         {
             IWebDriver driver = new EdgeDriver();
@@ -39,8 +50,10 @@ namespace AlphacertTest.BaseClasses
 
         }
 
-        
-        [BeforeScenario]
+        /// <summary>
+        /// Before starting the scenario sets the browser type 
+        /// </summary>
+        [BeforeScenario]        
         public static void InitWebdriver()
         {
             ObjectRepository.Config = new AppConfigReader();

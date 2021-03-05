@@ -13,12 +13,21 @@ namespace AlphacertTest.Configuration
 
     public class AppConfigReader : IConfig
     {
+        /// <summary>
+        /// Gets teh Browser type from App Settings
+        /// </summary>
+        /// <returns></returns>
         public BrowserType GetBrowser()
         {
             string browser = ConfigurationManager.AppSettings.Get("BrowserType");
             return (BrowserType)Enum.Parse(typeof(BrowserType), browser);
         }
 
+
+        /// <summary>
+        /// Gets the Webiste Url from App settings
+        /// </summary>
+        /// <returns></returns>
         public string GetWebsite()
         {
             return  ConfigurationManager.AppSettings.Get("WEBURL");
