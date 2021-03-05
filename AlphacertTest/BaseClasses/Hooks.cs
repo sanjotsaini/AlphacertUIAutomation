@@ -76,12 +76,13 @@ namespace AlphacertTest.BaseClasses
                        
                         snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
                         _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message+"\n" +
-                            _scenarioContext.TestError.StackTrace);
+                            _scenarioContext.TestError.StackTrace).AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
 
                     }
                     else
                     {
-                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed");
+                        snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
+                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed").AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
                     }
                     
                     break;
@@ -97,7 +98,8 @@ namespace AlphacertTest.BaseClasses
                     }
                     else
                     {
-                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is Passed");
+                        snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
+                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is Passed").AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
                     }
                     break;
                 case ScenarioBlock.Then:
@@ -106,12 +108,13 @@ namespace AlphacertTest.BaseClasses
                         
                         snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
                         _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message+"\n" +
-                            _scenarioContext.TestError.StackTrace);
+                            _scenarioContext.TestError.StackTrace).AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
 
                     }
                     else
                     {
-                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed");
+                        snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
+                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed").AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
                     }
                     break;
                 default:
@@ -120,12 +123,13 @@ namespace AlphacertTest.BaseClasses
                     if (_scenarioContext.TestError != null)
                     {
                         _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" +
-                            _scenarioContext.TestError.StackTrace);
+                            _scenarioContext.TestError.StackTrace).AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
 
                     }
                     else
                     {
-                        _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed");
+                        snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
+                        _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed").AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
                     }
                     break;
 
