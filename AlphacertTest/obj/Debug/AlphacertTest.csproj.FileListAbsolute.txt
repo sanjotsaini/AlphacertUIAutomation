@@ -198,3 +198,4 @@ C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTes
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.pdb
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.csprojAssemblyReference.cache
+C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Edge.SeleniumTools.dll
