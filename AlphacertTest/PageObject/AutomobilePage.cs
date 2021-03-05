@@ -24,7 +24,8 @@ namespace AlphacertTest.PageObject
 
         #region WebElements
 
-        
+        #region EnterVehicleData Elements
+
         private IWebElement MakeDropdown => ObjectRepository.Driver.FindElement(By.Id("make"));
         
         private IWebElement NumberOfSeatsDropdown => ObjectRepository.Driver.FindElement(By.Id("numberofseats"));
@@ -42,6 +43,10 @@ namespace AlphacertTest.PageObject
         private IWebElement DateOfManufactureDatePickler => ObjectRepository.Driver.FindElement(By.Id("dateofmanufacture"));
         
         private IWebElement NextButton => ObjectRepository.Driver.FindElement(By.Id("nextenterinsurantdata"));
+
+        #endregion
+
+        #region InsuranceData Elements
 
         private IWebElement FirstNameText => ObjectRepository.Driver.FindElement(By.Id("firstname"));
 
@@ -70,8 +75,9 @@ namespace AlphacertTest.PageObject
         private IWebElement WebsiteTxt => ObjectRepository.Driver.FindElement(By.Id("website"));
 
         private IWebElement InsuranceDatNextBttn => ObjectRepository.Driver.FindElement(By.Id("nextenterproductdata"));
+        #endregion
 
-        //ProductData Elements
+        #region ProductData Elements
 
         private IWebElement StartDateBttn => ObjectRepository.Driver.FindElement(By.Id("startdate"));
         
@@ -88,11 +94,19 @@ namespace AlphacertTest.PageObject
         private IWebElement CourtesyCarDropDwn => ObjectRepository.Driver.FindElement(By.Id("courtesycar"));
         
         private IWebElement ProductDataNextBttn => ObjectRepository.Driver.FindElement(By.Id("nextselectpriceoption"));
-        
+
+        #endregion
+
+        #region SelectPriceOption Elements
+
         private IWebElement SelectSilverRadioBttn => ObjectRepository.Driver.FindElement(By.XPath("//input[@id = 'selectsilver']/parent::*"));
         
         private IWebElement SelecetPriceOptionNextBttn => ObjectRepository.Driver.FindElement(By.Id("nextsendquote"));
-        
+
+        #endregion
+
+        #region SendQuote Elements
+
         private IWebElement EmailTxt => ObjectRepository.Driver.FindElement(By.Id("email"));
         
         private IWebElement UsernameTxt => ObjectRepository.Driver.FindElement(By.Id("username"));
@@ -106,6 +120,8 @@ namespace AlphacertTest.PageObject
         private IWebElement SendQuoteBttn => ObjectRepository.Driver.FindElement(By.Id("sendemail"));
 
         private IWebElement EmailSentText => ObjectRepository.Driver.FindElement(By.XPath("//div[@class = 'sweet-alert showSweetAlert visible']/h2"));
+
+        #endregion
 
         #endregion
 
@@ -418,15 +434,19 @@ namespace AlphacertTest.PageObject
 
         public  class IsuranceData
         {
-            private  IWebElement FirstNameText => ObjectRepository.Driver.FindElement(By.Id("firstname"));
+            #region Elements
+            private IWebElement FirstNameText => ObjectRepository.Driver.FindElement(By.Id("firstname"));
+            #endregion
 
-            public  void SetFirstName(string value)
+            #region Actions
+            public void SetFirstName(string value)
 
             {
                 WaitHelper.ThinkTime(1);
                 TextBoxHelper.setTextBoxValue(FirstNameText, value);
 
             }
+            #endregion
         }
 
     }

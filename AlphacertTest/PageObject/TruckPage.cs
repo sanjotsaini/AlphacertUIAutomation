@@ -21,7 +21,7 @@ namespace AlphacertTest.PageObject
         #endregion
 
 
-        #region
+        #region Actions
          public void SetPayload(string value)
         {
             WaitHelper.ThinkTime(1);

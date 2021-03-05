@@ -14,7 +14,6 @@ namespace AlphacertTest.PageObject
     {
 
         #region WebElements
-
         
         private IWebElement AutomobileNavButton => ObjectRepository.Driver.FindElement(By.XPath("//div[@class='main-navigation']/ul/li/a[@id ='nav_automobile']"));
         
@@ -24,14 +23,10 @@ namespace AlphacertTest.PageObject
         
         private IWebElement CamperNavButton => ObjectRepository.Driver.FindElement(By.XPath("//div[@class='main-navigation']/ul/li/a[@id ='nav_camper']"));
 
-
-
         #endregion
 
             
-
        
-
         #region Navigation
 
         public void NavigateToAutomobile()
