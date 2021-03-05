@@ -10,5 +10,6 @@ namespace AlphacertTest.Configuration
     {
         Chrome,
         Edge
+
     }
 }
