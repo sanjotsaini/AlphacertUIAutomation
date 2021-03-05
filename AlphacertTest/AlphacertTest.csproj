@@ -486,10 +486,12 @@
     <Compile Include="Configuration\BrowserType.cs" />
     <Compile Include="CustomException\NoSuitableDriverFound.cs" />
     <Compile Include="FeaturesSteps\LoginSteps.cs" />
+    <Compile Include="FeaturesSteps\TruckSteps.cs" />
     <Compile Include="Features\Login.feature.cs" />
     <Compile Include="Interfaces\IConfig.cs" />
     <Compile Include="PageObject\AutomobilePage.cs" />
     <Compile Include="PageObject\HomePage.cs" />
+    <Compile Include="PageObject\TruckPage.cs" />
     <Compile Include="ScreenShots\SnapShot.cs" />
     <Compile Include="Settings\AppConfigKeys.cs" />
     <Compile Include="Settings\ObjectRepository.cs" />
@@ -501,6 +503,7 @@
   <ItemGroup>
     <None Include="Features\Login.feature" />
     <None Include="App.config" />
+    <None Include="Features\Truck.feature" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

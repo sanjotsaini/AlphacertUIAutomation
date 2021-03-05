@@ -39,5 +39,7 @@ namespace AlphacertTest.Utilities
         public string Password { get; set; }
         public string ConfirmPassword { get; set; }
         public string Comment { get; set; }
+        public string Payload { get; set; }
+        public string TotalWeight { get; set; }
     }
 }

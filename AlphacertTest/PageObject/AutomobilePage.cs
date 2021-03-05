@@ -76,38 +76,40 @@ namespace AlphacertTest.PageObject
         //ProductData Elements
 
         private IWebElement StartDateBttn => ObjectRepository.Driver.FindElement(By.Id("startdate"));
+        
         private IWebElement InsuranceSunDropDwn => ObjectRepository.Driver.FindElement(By.Id("insurancesum"));
+        
         private IWebElement MeritRatingDropDwn => ObjectRepository.Driver.FindElement(By.Id("meritrating"));
+        
         private IWebElement DamageInsuranceDropDwn => ObjectRepository.Driver.FindElement(By.Id("damageinsurance"));
+        
         private IWebElement OptionalProductsEuro => ObjectRepository.Driver.FindElement(By.XPath("//p[@class='group']/label[text() = 'Euro Protection']"));
+        
         private IWebElement OptionalProductsLegal => ObjectRepository.Driver.FindElement(By.XPath("//p[@class='group']/label[text() = 'Legal Defense Insurance']"));
+        
         private IWebElement CourtesyCarDropDwn => ObjectRepository.Driver.FindElement(By.Id("courtesycar"));
+        
         private IWebElement ProductDataNextBttn => ObjectRepository.Driver.FindElement(By.Id("nextselectpriceoption"));
-
+        
         private IWebElement SelectSilverRadioBttn => ObjectRepository.Driver.FindElement(By.XPath("//input[@id = 'selectsilver']/parent::*"));
+        
         private IWebElement SelecetPriceOptionNextBttn => ObjectRepository.Driver.FindElement(By.Id("nextsendquote"));
-
+        
         private IWebElement EmailTxt => ObjectRepository.Driver.FindElement(By.Id("email"));
+        
         private IWebElement UsernameTxt => ObjectRepository.Driver.FindElement(By.Id("username"));
+        
         private IWebElement PasswordText => ObjectRepository.Driver.FindElement(By.Id("password"));
+        
         private IWebElement ConfirmPasswordTxt => ObjectRepository.Driver.FindElement(By.Id("confirmpassword"));
+        
         private IWebElement CommentTxt => ObjectRepository.Driver.FindElement(By.Id("Comments"));
+        
         private IWebElement SendQuoteBttn => ObjectRepository.Driver.FindElement(By.Id("sendemail"));
 
         private IWebElement EmailSentText => ObjectRepository.Driver.FindElement(By.XPath("//div[@class = 'sweet-alert showSweetAlert visible']/h2"));
 
-
-
-
-
-
-
-
         #endregion
-
-
-
-
 
         #region Actions
         public void SetMake(string name )
@@ -115,7 +117,6 @@ namespace AlphacertTest.PageObject
         {
             WaitHelper.ThinkTime(1);
             DropDownHelper.SelectElement(MakeDropdown, name);
-
         }
 
         public void SetNumberOfSeats(string name)
@@ -123,14 +124,12 @@ namespace AlphacertTest.PageObject
         {
             WaitHelper.ThinkTime(1);
             DropDownHelper.SelectElement(NumberOfSeatsDropdown, name);
-
         }
         public void SetFuelType(string name)
 
         {
             WaitHelper.ThinkTime(1);
             DropDownHelper.SelectElement(Fueltype, name);
-
         }
 
         public void SetEnginePerformance(string name)
@@ -138,28 +137,24 @@ namespace AlphacertTest.PageObject
         {
             WaitHelper.ThinkTime(1);
             TextBoxHelper.setTextBoxValue(EnginePerformanceText, name);
-
         }
         public void SetListPrice(string name)
 
         {
             WaitHelper.ThinkTime(1);
             TextBoxHelper.setTextBoxValue(ListPriceText, name);
-
         }
         public void SetLicensePlateNumber(string name)
 
         {
             WaitHelper.ThinkTime(1);
             TextBoxHelper.setTextBoxValue(LicensePlateNumberText, name);
-
         }
         public void SetAnnualMileage(string name)
 
         {
             WaitHelper.ThinkTime(1);
             TextBoxHelper.setTextBoxValue(AnnualMileageText, name);
-
         }
 
         public void SetDateOfManufacture(string name)
@@ -167,7 +162,6 @@ namespace AlphacertTest.PageObject
         {
             WaitHelper.ThinkTime(1);
             TextBoxHelper.setTextBoxValue(DateOfManufactureDatePickler, name);
-
         }
 
        
@@ -176,7 +170,6 @@ namespace AlphacertTest.PageObject
         {
             WaitHelper.ThinkTime(1);
             TextBoxHelper.setTextBoxValue(FirstNameText,value);
-
         }
         public void SetLastName(string value)
 
