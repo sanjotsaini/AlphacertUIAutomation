@@ -15,60 +15,46 @@ namespace AlphacertTest.PageObject
 
         #region WebElements
 
-        [FindsBy(How = How.XPath, Using = "//div[@class='main-navigation']/ul/li/a[@id ='nav_automobile']")]
-        private IWebElement AutomobileNavButton;
-
-        [FindsBy(How = How.XPath, Using = "//div[@class='main-navigation']/ul/li/a[@id ='nav_truck']")]
-        private IWebElement TruckNavButton;
-
-        [FindsBy(How = How.XPath, Using = "//div[@class='main-navigation']/ul/li/a[@id ='nav_motorcycle']")]
-        private IWebElement MoterCycleNavButton;
-
-        [FindsBy(How = How.XPath, Using = "//div[@class='main-navigation']/ul/li/a[@id ='nav_camper']")]
-        private IWebElement CamperNavButton;
-
         
+        private IWebElement AutomobileNavButton => ObjectRepository.Driver.FindElement(By.XPath("//div[@class='main-navigation']/ul/li/a[@id ='nav_automobile']"));
+        
+        private IWebElement TruckNavButton =>  ObjectRepository.Driver.FindElement(By.XPath("//div[@class='main-navigation']/ul/li/a[@id ='nav_truck']"));
+        
+        private IWebElement MoterCycleNavButton => ObjectRepository.Driver.FindElement(By.XPath("//div[@class='main-navigation']/ul/li/a[@id ='nav_motorcycle']"));
+        
+        private IWebElement CamperNavButton => ObjectRepository.Driver.FindElement(By.XPath("//div[@class='main-navigation']/ul/li/a[@id ='nav_camper']"));
+
+
 
         #endregion
 
-        public HomePage()
-        {
-            PageFactory.InitElements(ObjectRepository.Driver, this);
-
-        }
-
-
-        #region Actions
-        public void QuickSearch()
-        {
             
 
-        }
-
-        #endregion
+       
 
         #region Navigation
 
         public void NavigateToAutomobile()
         {
-
             WaitHelper.SetPageLoadTime(40);
-            AutomobileNavButton.Click();
-            
-            
-
+            AutomobileNavButton.Click();                       
         }
 
         public void NavigateToTruck()
         {
+            WaitHelper.SetPageLoadTime(40);
             TruckNavButton.Click();
-
         }
 
         public void NavigateToMotorCycle()
         {
+            WaitHelper.SetPageLoadTime(40);
             MoterCycleNavButton.Click();
-
+        }
+        public void NavigateToCamper()
+        {
+            WaitHelper.SetPageLoadTime(40);
+            CamperNavButton.Click();
         }
 
         #endregion

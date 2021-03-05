@@ -59,7 +59,7 @@ namespace AlphacertTest.PageObject
 
         private IWebElement CountryDropDwn => ObjectRepository.Driver.FindElement(By.Id("country"));
 
-        private IWebElement ZipCodeTxt => ObjectRepository.Driver.FindElement(By.Id("zipcodew"));
+        private IWebElement ZipCodeTxt => ObjectRepository.Driver.FindElement(By.Id("zipcode"));
 
         private IWebElement CityTxt => ObjectRepository.Driver.FindElement(By.Id("city"));
 

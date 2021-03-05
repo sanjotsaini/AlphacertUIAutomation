@@ -1,4 +1,5 @@
 ﻿using AlphacertTest.ScreenShots;
+using AlphacertTest.Settings;
 using AventStack.ExtentReports;
 using AventStack.ExtentReports.Gherkin.Model;
 using AventStack.ExtentReports.Reporter;
@@ -14,7 +15,7 @@ namespace AlphacertTest.BaseClasses
     [Binding]
     public sealed class Hooks
     {
-        private static ScenarioContext _scenarioContext;
+        public static ScenarioContext _scenarioContext;
         private static FeatureContext _featureContext;
         private static ExtentReports _extentReports;
         private static ExtentHtmlReporter _extentHtmlReporter;
@@ -145,6 +146,11 @@ namespace AlphacertTest.BaseClasses
         public static void AfterTestRun()
         {
             _extentReports.Flush();
+            if(ObjectRepository.Driver != null)
+            {
+                ObjectRepository.Driver.Close();
+                ObjectRepository.Driver.Quit();
+            }
         }
 
         public static  string GetCertificate()

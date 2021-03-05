@@ -14,6 +14,7 @@ using System;
 using System.IO;
 //using System.Configuration;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist;
 using static AlphacertTest.PageObject.AutomobilePage;
 
 namespace AlphacertTest.FeaturesSteps
@@ -26,20 +27,26 @@ namespace AlphacertTest.FeaturesSteps
         private readonly IsuranceData isuranceData;
         private readonly Validator validator;
         private readonly SnapShot snapShot;
+        private readonly ScenarioContext senario;
+        
 
-       
-        public LoginSteps()
+
+        public LoginSteps(ScenarioContext scenarioContext)
         {
             this.homePage = new HomePage();
             this.automobilePage = new AutomobilePage();
             this.isuranceData = new IsuranceData();
             this.validator = new Validator();
             this.snapShot = new SnapShot();
+            
         }        
 
         [Given(@"I visit to Tricentie website")]
         public void GivenIVisitToTricentieWebsite()
         {
+            string date = DateTime.Now.AddDays(32).ToString("dd/MM/yyyy");
+            //DateTime.UtcNow.ToString("yyyy-MM-dd")
+            //string date = expiryDate.ToString();
             NavigationHelper.NavigateToWebsite(ObjectRepository.Config.GetWebsite());
         }
 
@@ -49,65 +56,100 @@ namespace AlphacertTest.FeaturesSteps
             homePage.NavigateToAutomobile();
         }
 
-        [When(@"I filled the required details and send teh quote")]
-        public void WhenIFilledTheRequiredDetailsAndSendTehQuote()
+      
+
+        [Then(@"I verify the quote is sent succesfully")]
+        public void ThenIVerifyTheQuoteIsSentSuccesfully()
+        {                            
+            validator.ValidateString("Sending e-mail success!", automobilePage.GetEmailSentText());
+            snapShot.TakeSnap("EmailSent");
+        }
+
+        [Then(@"I fill the vehicle data details")]
+        public void ThenIFillTheVehicleDataDetails(Table vehicledata)
         {
-            automobilePage.SetMake("BMW");
-            automobilePage.SetDateOfManufacture("02/04/2007");
-            automobilePage.SetEnginePerformance("236");
-            automobilePage.SetNumberOfSeats("5");
-            automobilePage.SetFuelType("Petrol");
-            automobilePage.SetListPrice("50000");
-            automobilePage.SetLicensePlateNumber("LSU335");
-            automobilePage.SetAnnualMileage("300");
-            snapShot.TakeSnap("EnterVehicleData");
+            var dataTableValues = vehicledata.CreateInstance<DataTables>();
+           
+            automobilePage.SetMake(dataTableValues.Make);
+            automobilePage.SetDateOfManufacture(dataTableValues.DateOfManufacture);
+            automobilePage.SetEnginePerformance(dataTableValues.EnginePerformance);
+            automobilePage.SetNumberOfSeats(dataTableValues.NumberOfSeats);
+            automobilePage.SetFuelType(dataTableValues.FuelType);
+            automobilePage.SetListPrice(dataTableValues.ListPrice);
+            automobilePage.SetLicensePlateNumber(dataTableValues.LicencePlateNumber);
+            automobilePage.SetAnnualMileage(dataTableValues.AnualMilage);
+            snapShot.TakeSnap("VehicleData");
             automobilePage.ClickNextButton();
-            isuranceData.SetFirstName("Sanjot");
-            automobilePage.SetLastName("Saini");
-            automobilePage.SetDOB("12/26/1993");
+
+
+        }
+
+        [Then(@"I fill the insurance data details")]
+        public void ThenIFillTheInsuranceDataDetails(Table insuranceData)
+        {
+            var dataTableValues = insuranceData.CreateInstance<DataTables>();
+
+            isuranceData.SetFirstName(dataTableValues.FirstName);
+            automobilePage.SetLastName(dataTableValues.LastName);
+            automobilePage.SetDOB(dataTableValues.DOB);
             automobilePage.SetGenderMale();
-            automobilePage.SetStreetAdress("23, Magnolia Drive, Westown");
-            automobilePage.SetCountry("New Zealand");
-            automobilePage.SetCity("New Plymouth");
-            automobilePage.SetOccupation("Farmer");
+            automobilePage.SetStreetAdress(dataTableValues.StreetAddress);
+            automobilePage.SetCountry(dataTableValues.Country);
+            automobilePage.SetCity(dataTableValues.City);
+            automobilePage.SetOccupation(dataTableValues.Occupation);
             automobilePage.SetHobbiesSkyDiving();
             automobilePage.SetHobbiesSpeeding();
-            automobilePage.SetWebsite("https://facebook.com");
-            automobilePage.SetZipCode("4310");
+            automobilePage.SetWebsite(dataTableValues.Website);
+            automobilePage.SetZipCode(dataTableValues.ZipCode);
             snapShot.TakeSnap("InsuranceData");
             automobilePage.ClickInsuranceDataNextButton();
-            automobilePage.SetStartDate("04/05/2021");
-            automobilePage.SetInsuranceSum("7.000.000,00");
-            automobilePage.SetMeritRating("Bonus 7");
-            automobilePage.SetDamageInsurance("Full Coverage");
+        }
+
+        [Then(@"I fill the enter product data details")]
+        public void ThenIFillTheEnterProductDataDetails(Table productData)
+        {
+            var dataTableValues = productData.CreateInstance<DataTables>();
+            automobilePage.SetStartDate(DateTime.Now.AddDays(32).ToString("dd/MM/yyyy"));
+            automobilePage.SetInsuranceSum(dataTableValues.InsurancSum);
+            automobilePage.SetMeritRating(dataTableValues.MeritRating);
+            automobilePage.SetDamageInsurance(dataTableValues.DamageInsurance);
             automobilePage.SelectEuroProtection();
-            automobilePage.SetCourtesuCar("Yes");
+            automobilePage.SetCourtesuCar(dataTableValues.CourtesyCar);
             snapShot.TakeSnap("ProductData");
             automobilePage.ClickProductDataNextButton();
+        }
+
+        
+        [Then(@"I select the price option")]
+        public void ThenISelectThePriceOption()
+        {
             WaitHelper.SetPageLoadTime(40);
             automobilePage.SelectSilverPrice();
             snapShot.TakeSnap("PriceOption");
             automobilePage.ClickSelectPriceoptionNextButton();
-            automobilePage.SetEmail("Sainisanjot26@gmail.com");
-            automobilePage.SetUsername("Sainisa");
-            automobilePage.SetPassword("Password@123");
-            automobilePage.SetConfirmPassword("Password@123");
-            automobilePage.SetComments("Testing Exam");
-            snapShot.TakeSnap("SendQuote");
+        }
+
+        [Then(@"I click the send button")]
+        public void ThenIClickTheSendButton()
+        {
             automobilePage.ClickSendQuoteButton();
         }
 
-        [Then(@"I verify the quote is sent succesfully")]
-        public void ThenIVerifyTheQuoteIsSentSuccesfully()
+
+        [Then(@"I fill the send qoute details")]
+        public void ThenIFillTheSendQouteDetails(Table sendQuote)
         {
+            var dataTableValues = sendQuote.CreateInstance<DataTables>();
+            automobilePage.SetEmail(dataTableValues.Email);
+            automobilePage.SetUsername(dataTableValues.Username);
+            automobilePage.SetPassword(dataTableValues.Password);
+            automobilePage.SetConfirmPassword(dataTableValues.ConfirmPassword);
+            automobilePage.SetComments(dataTableValues.Comment);
+            snapShot.TakeSnap("SendQuote");
             
-                
-            validator.ValidateString("Sending e-mail success!", automobilePage.GetEmailSentText());
-            snapShot.TakeSnap("EmailSent");
-
-
-
         }
+
+
 
     }
 }

@@ -15,7 +15,7 @@ namespace AlphacertTest.ScreenShots
         public void TakeSnap(string imageName = "")
         {
 
-
+            string path = GetCertificate(imageName + ".jpeg");
             Screenshot ss = ((ITakesScreenshot)ObjectRepository.Driver).GetScreenshot();
             ss.SaveAsFile(GetCertificate(imageName+".jpeg"),
             ScreenshotImageFormat.Jpeg);
