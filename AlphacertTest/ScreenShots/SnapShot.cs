@@ -11,23 +11,26 @@ namespace AlphacertTest.ScreenShots
 {
     public class SnapShot
     {
-
+        /// <summary>
+        /// this method take the screen shot of window
+        /// </summary>
+        /// <param name="imageName"></param>         
         public void TakeSnap(string imageName = "")
         {
 
-            string path = GetCertificate(imageName + ".jpeg");
+            string path = GetPath(imageName + ".jpeg");
             Screenshot ss = ((ITakesScreenshot)ObjectRepository.Driver).GetScreenshot();
-            ss.SaveAsFile(GetCertificate(imageName+".jpeg"),
+            ss.SaveAsFile(GetPath(imageName+".jpeg"),
             ScreenshotImageFormat.Jpeg);
         }
      
-        public static  string GetCertificate(string name = "")
+        public static  string GetPath(string name = "")
         {
-            var jsonFilePath = Path.Combine(GetCertificatePath(DateTime.UtcNow.ToString("yyyy-MM-dd")) + @"/",name);
+            var jsonFilePath = Path.Combine(GetProjectPath(DateTime.UtcNow.ToString("yyyy-MM-dd")) + @"/",name);
             return jsonFilePath;
         }
 
-        private static string GetCertificatePath(string apiType)
+        private static string GetProjectPath(string apiType)
         {
             var assemblyPath = AppContext.BaseDirectory;
             var actualPath = assemblyPath.Substring(0, assemblyPath.LastIndexOf("bin"));

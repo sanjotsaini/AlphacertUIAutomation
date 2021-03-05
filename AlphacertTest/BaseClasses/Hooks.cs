@@ -31,7 +31,7 @@ namespace AlphacertTest.BaseClasses
         [BeforeTestRun]
         public static void BeforeTestRun()
         {
-            _extentHtmlReporter = new ExtentHtmlReporter(SnapShot.GetCertificate());
+            _extentHtmlReporter = new ExtentHtmlReporter(SnapShot.GetPath());
             _extentReports = new ExtentReports();
             _extentReports.AttachReporter(_extentHtmlReporter);
 
@@ -89,15 +89,15 @@ namespace AlphacertTest.BaseClasses
                     if (_scenarioContext.TestError != null)
                     {
 
-                        string path = SnapShot.GetCertificate(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
+                        string path = SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
                         snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
                         _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message+"\n" +
-                            _scenarioContext.TestError.StackTrace).AddScreenCaptureFromPath(SnapShot.GetCertificate(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "")+".jpeg"));
+                            _scenarioContext.TestError.StackTrace).AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "")+".jpeg"));
 
                     }
                     else
                     {
-                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Pass("Test is Passed");
+                        _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is Passed");
                     }
                     break;
                 case ScenarioBlock.Then:
@@ -111,7 +111,7 @@ namespace AlphacertTest.BaseClasses
                     }
                     else
                     {
-                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Pass("Test is passed");
+                        _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed");
                     }
                     break;
                 default:
@@ -125,7 +125,7 @@ namespace AlphacertTest.BaseClasses
                     }
                     else
                     {
-                        _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Pass("Test is passed");
+                        _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed");
                     }
                     break;
 
@@ -152,19 +152,6 @@ namespace AlphacertTest.BaseClasses
                 ObjectRepository.Driver.Quit();
             }
         }
-
-        public static  string GetCertificate()
-        {
-            var jsonFilePath = Path.Combine(GetCertificatePath(DateTime.UtcNow.ToString("yyyy-MM-dd-hh-mm-ss")) + @"/");
-            return jsonFilePath;
-        }
-
-        private static string GetCertificatePath(string apiType)
-        {
-            var assemblyPath = AppContext.BaseDirectory;
-            var actualPath = assemblyPath.Substring(0, assemblyPath.LastIndexOf("bin"));
-            var projectPath = new Uri(actualPath).LocalPath;
-            return projectPath + @"Reports/" + apiType;
-        }
+       
     }
 }
