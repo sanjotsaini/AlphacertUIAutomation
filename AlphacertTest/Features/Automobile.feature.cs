@@ -20,22 +20,22 @@ namespace AlphacertTest.Features
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("AutombileInsurance")]
-    public partial class AutombileInsuranceFeature
+    [NUnit.Framework.DescriptionAttribute("Automobile")]
+    public partial class AutomobileFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "Login.feature"
+#line 1 "Automobile.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "AutombileInsurance", null, ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Automobile", null, ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -108,7 +108,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("I visit to Tricentie website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
- testRunner.And("I navigate to automobile isurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I navigate to automobile insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -138,7 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "AnualMilage",
                             "300"});
 #line 9
- testRunner.Then("I fill the vehicle data details", ((string)(null)), table1, "Then ");
+ testRunner.Then("I fill the vehicle data details automobile", ((string)(null)), table1, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -201,7 +201,7 @@ this.ScenarioInitialize(scenarioInfo);
                             "CourtesyCar",
                             "Yes"});
 #line 32
- testRunner.Then("I fill the enter product data details", ((string)(null)), table3, "Then ");
+ testRunner.Then("I fill the enter product data details for automobile", ((string)(null)), table3, "Then ");
 #line hidden
 #line 40
  testRunner.Then("I select the price option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

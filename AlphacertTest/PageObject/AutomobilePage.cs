@@ -22,8 +22,6 @@ namespace AlphacertTest.PageObject
             this.snapShot = new SnapShot();
         }
 
-
-
         #region WebElements
 
         

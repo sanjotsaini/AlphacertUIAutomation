@@ -20,38 +20,33 @@ using static AlphacertTest.PageObject.AutomobilePage;
 namespace AlphacertTest.FeaturesSteps
 {
     [Binding]
-    public sealed class LoginSteps 
+    public sealed class GenricSteps
     {
         private readonly HomePage homePage;
         private readonly AutomobilePage automobilePage;
         private readonly IsuranceData isuranceData;
         private readonly Validator validator;
-        private readonly SnapShot snapShot;        
-       
-        public LoginSteps(ScenarioContext scenarioContext)
+        private readonly SnapShot snapShot;
+
+        public GenricSteps(ScenarioContext scenarioContext)
         {
             this.homePage = new HomePage();
             this.automobilePage = new AutomobilePage();
             this.isuranceData = new IsuranceData();
             this.validator = new Validator();
-            this.snapShot = new SnapShot();            
-        }        
+            this.snapShot = new SnapShot();
+        }
 
         [Given(@"I visit to Tricentie website")]
         public void GivenIVisitToTricentieWebsite()
-        {            
+        {
             NavigationHelper.NavigateToWebsite(ObjectRepository.Config.GetWebsite());
         }
 
-        [Given(@"I navigate to automobile isurance")]
-        public void GivenINavigateToAutomobileIsurance()
-        {
-            homePage.NavigateToAutomobile();
-        }
-      
+
         [Then(@"I verify the quote is sent succesfully")]
         public void ThenIVerifyTheQuoteIsSentSuccesfully()
-        {                            
+        {
             validator.ValidateString("Sending e-mail success!", automobilePage.GetEmailSentText());
             snapShot.TakeSnap("EmailSent");
         }
@@ -59,7 +54,7 @@ namespace AlphacertTest.FeaturesSteps
         [Then(@"I fill the vehicle data details")]
         public void ThenIFillTheVehicleDataDetails(Table vehicledata)
         {
-            var dataTableValues = vehicledata.CreateInstance<DataTables>();           
+            var dataTableValues = vehicledata.CreateInstance<DataTables>();
             automobilePage.SetMake(dataTableValues.Make);
             automobilePage.SetDateOfManufacture(dataTableValues.DateOfManufacture);
             automobilePage.SetEnginePerformance(dataTableValues.EnginePerformance);
@@ -97,8 +92,8 @@ namespace AlphacertTest.FeaturesSteps
         [Then(@"I fill the enter product data details")]
         public void ThenIFillTheEnterProductDataDetails(Table productData)
         {
-            var dataTableValues = productData.CreateInstance<DataTables>();            
-            automobilePage.SetStartDate(DateTime.Parse(dataTableValues.StartDate).AddDays(80).ToString("MM/dd/yyyy"));           
+            var dataTableValues = productData.CreateInstance<DataTables>();
+            automobilePage.SetStartDate(DateTime.Parse(dataTableValues.StartDate).AddDays(80).ToString("MM/dd/yyyy"));
             automobilePage.SetInsuranceSum(dataTableValues.InsurancSum);
             automobilePage.SetMeritRating(dataTableValues.MeritRating);
             automobilePage.SetDamageInsurance(dataTableValues.DamageInsurance);
@@ -108,7 +103,7 @@ namespace AlphacertTest.FeaturesSteps
             automobilePage.ClickProductDataNextButton();
         }
 
-        
+
         [Then(@"I select the price option")]
         public void ThenISelectThePriceOption()
         {
@@ -134,7 +129,7 @@ namespace AlphacertTest.FeaturesSteps
             automobilePage.SetConfirmPassword(dataTableValues.ConfirmPassword);
             automobilePage.SetComments(dataTableValues.Comment);
             snapShot.TakeSnap("SendQuote");
-            
+
         }
 
 

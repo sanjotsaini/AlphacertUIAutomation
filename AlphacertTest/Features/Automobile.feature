@@ -1,12 +1,12 @@
-﻿Feature: AutombileInsurance
+﻿Feature: Automobile
 	
 
 @Automobile @Positive
 Scenario: Get the Quote of Automobile Insurance
 
 	Given I visit to Tricentie website
-	And I navigate to automobile isurance
-	Then I fill the vehicle data details
+	And I navigate to automobile insurance
+	Then I fill the vehicle data details automobile
 	| Field              | Values     |
 	| Make               | BMW        |
 	| EnginePerformance  | 236        |
@@ -29,7 +29,7 @@ Scenario: Get the Quote of Automobile Insurance
 	| Occupation    | Farmer            |
 	| Hobbies       | SkyDiving         |
 	| Website       |https://facebook.com|
-	Then I fill the enter product data details
+	Then I fill the enter product data details for automobile
 	| Field            | Values        |
 	| StartDate        | 05/03/2021    |
 	| InsurancSum      | 7.000.000,00  |
@@ -47,5 +47,3 @@ Scenario: Get the Quote of Automobile Insurance
 	| Comment         | Test                    |		
 	And I click the send button
 	Then I verify the quote is sent succesfully 
-	
-	
