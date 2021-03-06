@@ -28,7 +28,7 @@ Folder Structure and Pattern details:
 11.	Utilities: - Contains class Validator to Assert the test result and Data tables class to store the data table variables 
         
 Code Repository: I have used GitHub Code repository to store my Code below is the link to the repository
-LINK: - sanjotsaini/AlphacertUIAutomation (github.com)
+LINK: - https://github.com/sanjotsaini/AlphacertUIAutomation/tree/master
 
 Software Requirement: -  
 
@@ -47,7 +47,7 @@ Nugget Package Requirement: -
 
 Test Execution: - 
 
-1.	Download the project from GitHub (sanjotsaisssni/AlphacertUIAutomation (github.com))
+1.	Download the project from GitHub (https://github.com/sanjotsaini/AlphacertUIAutomation/tree/master)
 2.	Download Install Microsoft Visual Studio 2019
 3.	Open the AlphacertTest.sln file in Visual studio 2019
 4.	Build the Project
