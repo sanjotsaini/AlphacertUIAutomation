@@ -46,6 +46,7 @@ C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.As
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.AspNetCore.WebUtilities.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.CodeAnalysis.dll
+C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Edge.SeleniumTools.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Extensions.Configuration.Binder.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Extensions.Configuration.CommandLine.dll
@@ -197,5 +198,3 @@ C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTes
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.csproj.CopyComplete
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.pdb
-C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.csprojAssemblyReference.cache
-C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Edge.SeleniumTools.dll
