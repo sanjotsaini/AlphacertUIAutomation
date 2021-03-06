@@ -53,10 +53,26 @@ Test Execution: -
 4.	Build the Project
 5.	If you don't see the Test Explorer, Go to Test --> Test Explorer. Run the tests from there.
 6.	Right click on the test and Run the project
+7.	Also Check the Video to find how to run the test
 
 NOTE: - Make sure Webdriver.exe in bin/Debug directory is of same version of you chrome browser
 
 How to Check the Report?: - Right Click on Report folder --> select open in file explorer --> open Todays date folder --> open the Index.html
+
+How to Check report for failed test?
+
+1.	In PageObject folder open TruckPage.cs and change the Id of the any element and save the changes and run the test and verify the report
+
+
+Things to be Improved: - 
+
+1.	We Could Refactor the code and reduce some folder by making Generic helper class
+2.	We could add more tests 
+3.	We could store the screen shots in Bin folder which will take less memory 
+4.	We can add logger 
+5.	We could make Generic Page class in Page Object for common elements in all the pages and could be used in any pages
+6.	We could Create the Methods for Radio button to select by name instead of elements 
+
 
 
 
