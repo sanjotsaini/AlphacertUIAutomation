@@ -1,5 +1,3 @@
-C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.AspNetCore.Server.IIS.xml
-C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
@@ -133,6 +131,7 @@ C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.As
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.AspNetCore.Razor.Runtime.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.AspNetCore.Routing.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.AspNetCore.Server.IIS.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.AspNetCore.Server.IISIntegration.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.AspNetCore.Server.Kestrel.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.AspNetCore.Server.Kestrel.Core.xml
@@ -145,6 +144,7 @@ C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Co
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.CodeAnalysis.CSharp.pdb
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.CodeAnalysis.CSharp.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Extensions.Configuration.xml
+C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Extensions.Configuration.CommandLine.xml
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\bin\Debug\Microsoft.Extensions.Configuration.EnvironmentVariables.xml
@@ -198,4 +198,3 @@ C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTes
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.csproj.CopyComplete
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.dll
 C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.pdb
-C:\Users\sainisa\source\repos\AlphacertTest\AlphacertTest\obj\Debug\AlphacertTest.csprojAssemblyReference.cache
