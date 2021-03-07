@@ -504,8 +504,8 @@
     <Compile Include="Utilities\Validator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Features\Automobile.feature" />
     <None Include="App.config" />
+    <None Include="Features\Automobile.feature" />
     <None Include="Features\Truck.feature" />
     <None Include="packages.config" />
   </ItemGroup>

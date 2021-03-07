@@ -75,13 +75,13 @@ namespace AlphacertTest.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Get the Quote of Automobile Insurance")]
-        [NUnit.Framework.CategoryAttribute("Automobile")]
         [NUnit.Framework.CategoryAttribute("Positive")]
+        [NUnit.Framework.CategoryAttribute("Automobile")]
         public virtual void GetTheQuoteOfAutomobileInsurance()
         {
             string[] tagsOfScenario = new string[] {
-                    "Automobile",
-                    "Positive"};
+                    "Positive",
+                    "Automobile"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Get the Quote of Automobile Insurance", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
@@ -104,11 +104,11 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
  testRunner.Given("I visit to Tricentie website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
- testRunner.And("I navigate to automobile insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 7
+ testRunner.When("I navigate to automobile insurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -137,8 +137,8 @@ this.ScenarioInitialize(scenarioInfo);
                 table1.AddRow(new string[] {
                             "AnualMilage",
                             "300"});
-#line 9
- testRunner.Then("I fill the vehicle data details automobile", ((string)(null)), table1, "Then ");
+#line 8
+ testRunner.When("I fill the vehicle data details automobile", ((string)(null)), table1, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -176,8 +176,8 @@ this.ScenarioInitialize(scenarioInfo);
                 table2.AddRow(new string[] {
                             "Website",
                             "https://facebook.com"});
-#line 19
- testRunner.Then("I fill the insurance data details", ((string)(null)), table2, "Then ");
+#line 18
+ testRunner.When("I fill the insurance data details", ((string)(null)), table2, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -200,11 +200,11 @@ this.ScenarioInitialize(scenarioInfo);
                 table3.AddRow(new string[] {
                             "CourtesyCar",
                             "Yes"});
-#line 32
- testRunner.Then("I fill the enter product data details for automobile", ((string)(null)), table3, "Then ");
+#line 31
+ testRunner.When("I fill the enter product data details for automobile", ((string)(null)), table3, "When ");
 #line hidden
-#line 40
- testRunner.Then("I select the price option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 39
+ testRunner.When("I select the price option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -224,13 +224,13 @@ this.ScenarioInitialize(scenarioInfo);
                 table4.AddRow(new string[] {
                             "Comment",
                             "Test"});
-#line 41
- testRunner.Then("I fill the send qoute details", ((string)(null)), table4, "Then ");
+#line 40
+ testRunner.When("I fill the send qoute details", ((string)(null)), table4, "When ");
+#line hidden
+#line 47
+ testRunner.When("I click the send button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 48
- testRunner.And("I click the send button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 49
  testRunner.Then("I verify the quote is sent succesfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

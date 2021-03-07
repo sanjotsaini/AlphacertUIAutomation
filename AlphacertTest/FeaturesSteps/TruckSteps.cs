@@ -14,24 +14,26 @@ namespace AlphacertTest.FeaturesSteps
         private readonly AutomobilePage automobilePage;
         private readonly TruckPage truckPage;
         private readonly SnapShot snapShot;
+        private readonly ScenarioContext _scenarioContext;
 
-
-        public TruckSteps()
+        public TruckSteps(ScenarioContext scenarioContext)
         {
             this.homePage = new HomePage();
             this.automobilePage = new AutomobilePage();
             this.snapShot = new SnapShot();
             this.truckPage = new TruckPage();
+            this._scenarioContext = scenarioContext;
         }
 
-        [Given(@"I navigate to truck isurance")]
-        public void GivenINavigateToTruckIsurance()
+
+        [When(@"I navigate to truck isurance")]
+        public void WhenINavigateToTruckIsurance()
         {
             homePage.NavigateToTruck();
         }
-
-        [Then(@"I fill the vehicle data details truck")]
-        public void ThenIFillTheVehicleDataDetailsTruck(Table vehicledata)
+        
+        [When(@"I fill the vehicle data details truck")]
+        public void WhenIFillTheVehicleDataDetailsTruck(Table vehicledata)
         {
             var dataTableValues = vehicledata.CreateInstance<DataTables>();
             automobilePage.SetMake(dataTableValues.Make);
@@ -44,20 +46,20 @@ namespace AlphacertTest.FeaturesSteps
             automobilePage.SetListPrice(dataTableValues.ListPrice);
             automobilePage.SetLicensePlateNumber(dataTableValues.LicencePlateNumber);
             automobilePage.SetAnnualMileage(dataTableValues.AnualMilage);
-            snapShot.TakeSnap("TruckVehicleData");
+            snapShot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
             automobilePage.ClickNextButton();
         }
-        [Then(@"I fill the enter product data details for truck")]
-        public void ThenIFillTheEnterProductDataDetailsForTruck(Table truckProductData)
+        
+        [When(@"I fill the enter product data details for truck")]
+        public void WhenIFillTheEnterProductDataDetailsForTruck(Table truckProductData)
         {
             var dataTableValues = truckProductData.CreateInstance<DataTables>();
             automobilePage.SetStartDate(DateTime.Parse(dataTableValues.StartDate).AddDays(80).ToString("MM/dd/yyyy"));
-            automobilePage.SetInsuranceSum(dataTableValues.InsurancSum);            
+            automobilePage.SetInsuranceSum(dataTableValues.InsurancSum);
             automobilePage.SetDamageInsurance(dataTableValues.DamageInsurance);
-            automobilePage.SelectEuroProtection();           
-            snapShot.TakeSnap("ProductData");
+            automobilePage.SelectEuroProtection();
+            snapShot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
             automobilePage.ClickProductDataNextButton();
         }
-
     }
 }

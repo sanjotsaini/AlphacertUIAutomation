@@ -75,14 +75,14 @@ namespace AlphacertTest.BaseClasses
                     {
                        
                         snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
+                       
                         _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message+"\n" +
                             _scenarioContext.TestError.StackTrace).AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
 
                     }
                     else
-                    {
-                        snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
-                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed").AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
+                    {                                              
+                        _scenario.CreateNode<Given>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed").AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));                        
                     }
                     
                     break;
@@ -97,8 +97,7 @@ namespace AlphacertTest.BaseClasses
 
                     }
                     else
-                    {
-                        snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
+                    {                       
                         _scenario.CreateNode<When>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is Passed").AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
                     }
                     break;
@@ -112,14 +111,12 @@ namespace AlphacertTest.BaseClasses
 
                     }
                     else
-                    {
-                        snapshot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
+                    {                      
                         _scenario.CreateNode<Then>(_scenarioContext.StepContext.StepInfo.Text).Pass("Step is passed").AddScreenCaptureFromPath(SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg"));
                     }
                     break;
                 default:
-                    string name = _scenarioContext.StepContext.StepInfo.Text.Replace(" ", "");
-                    snapshot.TakeSnap(name);
+                                      
                     if (_scenarioContext.TestError != null)
                     {
                         _scenario.CreateNode<And>(_scenarioContext.StepContext.StepInfo.Text).Fail(_scenarioContext.TestError.Message + "\n" +
@@ -140,7 +137,16 @@ namespace AlphacertTest.BaseClasses
         }
 
 
-     
+
+
+        //[BeforeStep]
+        //public void BeforeStep() {
+        //    snapshot.TakeSnap(_scenarioContext.StepContext.  .StepInfo.Text.Replace(" ", ""));
+        //    string path = _scenarioContext.StepContext.StepInfo.Text.Replace(" ", "");
+        //    string gotpath = SnapShot.GetPath(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", "") + ".jpeg");
+
+        //}
+
         [AfterScenario]
         public void AfterScenario()
         {
@@ -148,6 +154,7 @@ namespace AlphacertTest.BaseClasses
         }
 
 
+        [AfterScenario]
         [AfterTestRun]
         public static void AfterTestRun()
         {

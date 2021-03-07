@@ -104,11 +104,11 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
+#line 6
  testRunner.Given("I visit to Tricentie website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 8
- testRunner.And("I navigate to truck isurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 7
+ testRunner.When("I navigate to truck isurance", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -143,8 +143,8 @@ this.ScenarioInitialize(scenarioInfo);
                 table5.AddRow(new string[] {
                             "AnualMilage",
                             "300"});
-#line 9
- testRunner.Then("I fill the vehicle data details truck", ((string)(null)), table5, "Then ");
+#line 8
+ testRunner.When("I fill the vehicle data details truck", ((string)(null)), table5, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -182,8 +182,8 @@ this.ScenarioInitialize(scenarioInfo);
                 table6.AddRow(new string[] {
                             "Website",
                             "https://facebook.com"});
-#line 21
- testRunner.Then("I fill the insurance data details", ((string)(null)), table6, "Then ");
+#line 20
+ testRunner.When("I fill the insurance data details", ((string)(null)), table6, "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -206,11 +206,11 @@ this.ScenarioInitialize(scenarioInfo);
                 table7.AddRow(new string[] {
                             "CourtesyCar",
                             "Yes"});
-#line 34
- testRunner.Then("I fill the enter product data details for truck", ((string)(null)), table7, "Then ");
+#line 33
+ testRunner.When("I fill the enter product data details for truck", ((string)(null)), table7, "When ");
 #line hidden
-#line 42
- testRunner.Then("I select the price option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 41
+ testRunner.When("I select the price option", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table8 = new TechTalk.SpecFlow.Table(new string[] {
                             "Field",
@@ -230,13 +230,13 @@ this.ScenarioInitialize(scenarioInfo);
                 table8.AddRow(new string[] {
                             "Comment",
                             "Test"});
-#line 43
- testRunner.Then("I fill the send qoute details", ((string)(null)), table8, "Then ");
+#line 42
+ testRunner.When("I fill the send qoute details", ((string)(null)), table8, "When ");
+#line hidden
+#line 49
+ testRunner.When("I click the send button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 50
- testRunner.And("I click the send button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line hidden
-#line 51
  testRunner.Then("I verify the quote is sent succesfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

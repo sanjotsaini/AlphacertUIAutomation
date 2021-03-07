@@ -1,12 +1,11 @@
 ﻿Feature: Automobile
 	
 
-@Automobile @Positive
+@Positive @Automobile
 Scenario: Get the Quote of Automobile Insurance
-
 	Given I visit to Tricentie website
-	And I navigate to automobile insurance
-	Then I fill the vehicle data details automobile
+	When I navigate to automobile insurance
+	When I fill the vehicle data details automobile
 	| Field              | Values     |
 	| Make               | BMW        |
 	| EnginePerformance  | 236        |
@@ -16,7 +15,7 @@ Scenario: Get the Quote of Automobile Insurance
 	| ListPrice          | 50000      |
 	| LicencePlateNumber | LSU335     |
 	| AnualMilage        | 300        |		
-	Then I fill the insurance data details
+	When I fill the insurance data details
 	| Field         | Values            |
 	| FirstName     | Sanjot            |
 	| LastName      | Saini             |
@@ -29,7 +28,7 @@ Scenario: Get the Quote of Automobile Insurance
 	| Occupation    | Farmer            |
 	| Hobbies       | SkyDiving         |
 	| Website       |https://facebook.com|
-	Then I fill the enter product data details for automobile
+	When I fill the enter product data details for automobile
 	| Field            | Values        |
 	| StartDate        | 05/03/2021    |
 	| InsurancSum      | 7.000.000,00  |
@@ -37,13 +36,13 @@ Scenario: Get the Quote of Automobile Insurance
 	| DamageInsurance  | Full Coverage |
 	| OptionalProducts |               |
 	| CourtesyCar      | Yes           |
-	Then  I select the price option
-	Then I fill the send qoute details
+	When  I select the price option
+	When I fill the send qoute details
 	| Field           | Values                  |
 	| Email           | sainisanjot26@gmail.com |
 	| Username        | sainisa                 |
 	| Password        | Password@123            |
 	| ConfirmPassword | Password@123            |
 	| Comment         | Test                    |		
-	And I click the send button
+	When I click the send button
 	Then I verify the quote is sent succesfully 

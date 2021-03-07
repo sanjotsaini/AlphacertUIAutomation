@@ -11,11 +11,14 @@ namespace AlphacertTest.FeaturesSteps
     [Binding]
     public class AutomobileSteps
     {
+
         private readonly HomePage homePage;
         private readonly AutomobilePage automobilePage;
         private readonly IsuranceData isuranceData;
         private readonly Validator validator;
         private readonly SnapShot snapShot;
+        private readonly ScenarioContext _scenarioContext;
+
 
         public AutomobileSteps(ScenarioContext scenarioContext)
         {
@@ -24,17 +27,17 @@ namespace AlphacertTest.FeaturesSteps
             this.isuranceData = new IsuranceData();
             this.validator = new Validator();
             this.snapShot = new SnapShot();
+            _scenarioContext = scenarioContext;
         }
 
-        [Given(@"I navigate to automobile insurance")]
-        public void GivenINavigateToAutomobileInsurance()
+        [When(@"I navigate to automobile insurance")]
+        public void WhenINavigateToAutomobileInsurance()
         {
             homePage.NavigateToAutomobile();
         }
-
-
-        [Then(@"I fill the vehicle data details automobile")]
-        public void ThenIFillTheVehicleDataDetailsAutomobile(Table AutomobileVehicledata)
+        
+        [When(@"I fill the vehicle data details automobile")]
+        public void WhenIFillTheVehicleDataDetailsAutomobile(Table AutomobileVehicledata)
         {
             var dataTableValues = AutomobileVehicledata.CreateInstance<DataTables>();
             automobilePage.SetMake(dataTableValues.Make);
@@ -44,13 +47,13 @@ namespace AlphacertTest.FeaturesSteps
             automobilePage.SetFuelType(dataTableValues.FuelType);
             automobilePage.SetListPrice(dataTableValues.ListPrice);
             automobilePage.SetLicensePlateNumber(dataTableValues.LicencePlateNumber);
-            automobilePage.SetAnnualMileage(dataTableValues.AnualMilage);
-            snapShot.TakeSnap("AutomobileVehicleData");
+            automobilePage.SetAnnualMileage(dataTableValues.AnualMilage);            
+            snapShot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
             automobilePage.ClickNextButton();
         }
-
-        [Then(@"I fill the enter product data details for automobile")]
-        public void ThenIFillTheEnterProductDataDetailsForAutomobile(Table automobileProductData)
+        
+        [When(@"I fill the enter product data details for automobile")]
+        public void WhenIFillTheEnterProductDataDetailsForAutomobile(Table automobileProductData)
         {
             var dataTableValues = automobileProductData.CreateInstance<DataTables>();
             automobilePage.SetStartDate(DateTime.Parse(dataTableValues.StartDate).AddDays(80).ToString("MM/dd/yyyy"));
@@ -59,7 +62,7 @@ namespace AlphacertTest.FeaturesSteps
             automobilePage.SetDamageInsurance(dataTableValues.DamageInsurance);
             automobilePage.SelectEuroProtection();
             automobilePage.SetCourtesuCar(dataTableValues.CourtesyCar);
-            snapShot.TakeSnap("ProductData");
+            snapShot.TakeSnap(_scenarioContext.StepContext.StepInfo.Text.Replace(" ", ""));
             automobilePage.ClickProductDataNextButton();
         }
     }
